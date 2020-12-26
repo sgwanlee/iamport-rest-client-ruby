@@ -195,8 +195,20 @@ module Iamport
       pay_delete(uri)
     end
 
+    def get_external_receipt(merchant_uid)
+      uri = "receipts/external/#{CGI.escape(merchant_uid)}"
+
+      pay_get(uri)
+    end    
+
+    def create_external_receipt(merchant_uid)
+      uri = "receipts/external/#{CGI.escape(merchant_uid)}"
+
+      pay_post(uri)
+    end
+
     def delete_external_receipt(merchant_uid)
-      uri = "receipts/#{CGI.escape(merchant_uid)}"
+      uri = "receipts/external/#{CGI.escape(merchant_uid)}"
 
       pay_delete(uri)
     end
